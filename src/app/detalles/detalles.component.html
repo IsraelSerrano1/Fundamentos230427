@@ -1,0 +1,17 @@
+<h3>Detalle de pedidos</h3>
+
+<form #formReac="ngForm" [formGroup]="form" (ngSubmit)="addDetalle()">
+  <table>
+    <tr>
+      <th>ID Producto</th>
+      <th>Cantidad</th>
+    </tr>
+    <tr>
+      <td>
+        <input type="number" formControlName="idProducto" min="0" />
+      </td>
+      <td><input type="number" formControlName="cantidad" min="0" /></td>
+      <td><button type="submit">Agregar Detalle</button></td>
+    </tr>
+  </table>
+</form>
