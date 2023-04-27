@@ -12,5 +12,6 @@ export class Pedido{
         this.cliente_id = cliente_id;
         this.forma_pago = forma_pago;
         this.direccion_entrega =direccion_entrega
+        
     }
 }

@@ -1,24 +1,29 @@
 <h1>Pedidos</h1>
 
 <form #formReac="ngForm" [formGroup]="form" (ngSubmit)="addPedido()">
-  <table>
-    <tr>
-      <th>Cliente ID</th>
-      <th>Forma de Pago</th>
-      <th>Direccion Entrega</th>
-    </tr>
-    <tr>
-      <td>
-        <input type="number" formControlName="clienteId" min="0" autofocus />
-      </td>
-      <td><input type="string" formControlName="formaPago" /></td>
-      <td><input type="string" formControlName="direccion" /></td>
-    </tr>
-  </table>
-  <button type="button" [routerLink]="['/detalle', pedidoAux.pedidos_id]">
-    Agregar Detalle de Pedidos
-  </button>
-  <router-outlet></router-outlet>
-  <br /><br />
-  <button type="submit" routerLink="">Agregar Pedido</button>
+
+    <table>
+        <tr>
+            <th>Pedido ID</th>
+            <th>Cliente ID</th>
+            <th>Forma de Pago</th>
+            <th>Direccion Entrega</th>
+        </tr>
+        <tr>
+            <td><input type="number" formControlName="pedidoId" readonly></td>
+            <td><input type="number" formControlName="clienteId" ></td>
+            <td><input type="string" formControlName="formaPago" ></td>
+            <td><input type="string" formControlName="direccion" ></td>            
+        </tr>
+        
+        </table>
+        <button type="button" [routerLink]="['/detalle',  pedidoAux.pedidos_id]" >Agregar Detalle de Pedidos</button>
+        <router-outlet></router-outlet>
+        <br><br>
+        <button type="submit" routerLink="">Agregar Pedido</button>
 </form>
+
+
+
+
+

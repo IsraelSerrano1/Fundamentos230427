@@ -13,11 +13,14 @@ export class PedidosComponent {
   form: FormGroup;
   pedido: Pedido = new Pedido(0, '', '');
   pedidoAux = new Pedido(0, '', '');
+  idPedidoAux = new FormControl(1);
+
 
   constructor(private servicioPD: ServicioPedidosDetallesService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
+      pedidoId:this.idPedidoAux,
       clienteId: new FormControl(''),
       formaPago: new FormControl(''),
       direccion: new FormControl(''),
@@ -34,5 +37,7 @@ export class PedidosComponent {
     this.servicioPD.addPedido(this.pedidoAux);
     this.pedidoAux = new Pedido(0, '', '');
     this.form.reset();
+    this.idPedidoAux.setValue(this.pedidoAux.pedidos_id);
+
   }
 }
