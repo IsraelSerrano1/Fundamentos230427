@@ -16,7 +16,7 @@ export class PedidosComponent {
   idPedidoAux = new FormControl(1);
 
 
-  constructor(private servicioPD: ServicioPedidosDetallesService) {}
+  constructor(public servicioPD: ServicioPedidosDetallesService) {}
 
   ngOnInit() {
     this.form = new FormGroup({

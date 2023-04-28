@@ -8,10 +8,10 @@
     </tr>
     <tr>
       <td>
-        <input type="number" formControlName="idProducto" min="0" />
+        <input type="number" formControlName="idProducto" min="0" required="" />
       </td>
-      <td><input type="number" formControlName="cantidad" min="0" /></td>
-      <td><button type="submit">Agregar Detalle</button></td>
+      <td><input type="number" formControlName="cantidad" min="0" required=""/></td>
+      <td><button type="submit" [disabled]="formReac.invalid">Agregar Detalle</button></td>
     </tr>
   </table>
 </form>

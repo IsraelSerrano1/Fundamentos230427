@@ -16,7 +16,7 @@ export class DetallesComponent {
 
   constructor(
     private activarRutas: ActivatedRoute,
-    private servicioPD: ServicioPedidosDetallesService
+    public servicioPD: ServicioPedidosDetallesService
   ) {}
 
   ngOnInit() {

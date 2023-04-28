@@ -11,16 +11,16 @@
         </tr>
         <tr>
             <td><input type="number" formControlName="pedidoId" readonly></td>
-            <td><input type="number" formControlName="clienteId" ></td>
-            <td><input type="string" formControlName="formaPago" ></td>
-            <td><input type="string" formControlName="direccion" ></td>            
+            <td><input type="number" formControlName="clienteId" required=""></td>
+            <td><input type="string" formControlName="formaPago" required="" ></td>
+            <td><input type="string" formControlName="direccion" required=""></td>            
         </tr>
         
         </table>
-        <button type="button" [routerLink]="['/detalle',  pedidoAux.pedidos_id]" >Agregar Detalle de Pedidos</button>
+        <button type="button" [routerLink]="['/detalle',  pedidoAux.pedidos_id]" [disabled]="formReac.invalid" >Agregar Detalle de Pedidos</button>
         <router-outlet></router-outlet>
         <br><br>
-        <button type="submit" routerLink="">Agregar Pedido</button>
+        <button type="submit" routerLink="" [disabled]="formReac.invalid || servicioPD.detallesAux.length==0">Agregar Pedido</button>
 </form>
 
 
